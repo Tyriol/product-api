@@ -46,11 +46,14 @@ app.post("/api/products", (req, res) => {
   if (!req.body.name) {
     errors.push("No name specified");
   }
+  if (!req.body.description) {
+    errors.push("No description specified");
+  }
   if (!req.body.price) {
     errors.push("No price specified");
   }
   if (errors.length) {
-    res.status(400).json({ error: errors.join(",") });
+    res.status(400).json({ error: errors.join(", ") });
     return;
   }
   const data = {
@@ -68,7 +71,6 @@ app.post("/api/products", (req, res) => {
     res.status(201).json({
       message: "success",
       payload: data,
-      changes: this.changes,
     });
   });
 });
