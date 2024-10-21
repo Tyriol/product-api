@@ -1,0 +1,16 @@
+{
+  "name": "product-api",
+  "version": "1.0.0",
+  "description": "Create a REST API using node.js and express that allows consumers to add, update and get product\r data. A sample project has been included to help you start off.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "sqlite3": "^5.1.7"
+  }
+}
