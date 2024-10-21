@@ -1,41 +1,38 @@
 # Product RESTful API
 
-Create a REST API using node.js and express that allows consumers to add, update and get product
-data. A sample project has been included to help you start off.
+## Description
 
-These are the queries that we should be able to send to the endpoint
+Simple REST API server that uses an embedded in-memory database (SQLite3)
+It serves product data, allowing the consumer to add, update and fetch product data
 
-Add a new product
+### Tech Stack
 
-`curl -X POST -H &quot;Content-Type: application/json&quot; \
--d &#39;{&quot;stock_number&quot;:&quot;12345&quot;,&quot;name&quot;:&quot;Pro
-Batteries&quot;,&quot;Description&quot;:&quot;Batteries&quot;,&quot;Price&quot;:&quot;£1.99&quot;}&#39; \
-http://localhost:8080/products`
+- Node.js
+- Express
+- SQLite3
 
-Update an existing product
+### To get started
 
-`curl -X PUT -H &quot;Content-Type: application/json&quot; \
--d &#39;{&quot;stock_number&quot;:&quot;12345&quot;,&quot;name&quot;:&quot;Pro
-Batteries&quot;,&quot;Description&quot;:&quot;Batteries&quot;,&quot;Price&quot;:&quot;£2.99&quot;}&#39; \
-http://localhost:8080/products/{stock_number}`
+Clone the repo to your local machine
 
-Get an existing product
-`curl -H &quot;Content-Type: application/json&quot;
-http://localhost:8080/products/{stock_number}`
+Install dependencies
 
-Consider the following:
+```
+npm install
+```
 
-1. Ensure your code is readable and maintainable, consider breaking the code into different
-   functions https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29
-2. Ensure that API Interface is easy for consumers to understand and HTTP codes are returned
-   within the response are correct and reflective of the status of the response
-3. Consider how you would store the product data, possibly use an in-memory database
-4. Ensure you test your code through use of unit testing
+Start the server
 
-We completely understand that people need a work life balance, all we are asking for is you to
-implement as much of the solution as possible. We are not expecting polished/perfect solutions we
-recognise that the time you will be able to spend on this will be limited. If you run out of time, please
-feel see to add pseudo code.
+```
+npm run start
+```
 
-Please add your code to a repository in GitHub that is public and send us a link once you have
-completed the task.
+You can test it's working by running the following command in another terminal while the server is running:
+
+```
+curl -X GET http://localhost:3000/api/products
+```
+
+You can then access the data however you would normally interact with an API (Postman, curl, fetch etc) via the url: `http://localhost:3000/api/`
+
+Enjoy!

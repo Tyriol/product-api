@@ -1,22 +1,24 @@
 # Plan
 
-- [ ] Investigate in memory starage options (SQLite, LowDB, NeDB, LokiJS)
-  - [ ] How to install
-  - [ ] How to use with a RESTful API
-- [ ] Set up environment
-  - [ ] init npm
-  - [ ] install express
-  - [ ] install in memory package
-    - [ ] Test
+- [x] Investigate in memory starage options (SQLite, ~~LowDB~~, ~~NeDB~~, ~~LokiJS~~)
+  - [x] How to install
+  - [x] How to use with a RESTful API
+- [x] Set up environment
+  - [x] init npm
+  - [x] install express
+  - [x] install in memory package
+- [x] Set up database
+  - [x] Create Schema (stock number (UUID maybe?), name, description, price)
+  - [x] initialise db file
 - [ ] Define folder heirarchy
-  - [ ] Database?
-  - [ ] API server
+  - [x] Database?
+  - [x] API server
   - [ ] Helper functions
 - [ ] Define routes
   - [ ] POST
     - [ ] Test
-  - [ ] GET
-    - [ ] Test
+  - [x] GET
+    - [x] Test
   - [ ] PUT
     - [ ] Test
 - [ ] Define helper functions
