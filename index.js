@@ -75,6 +75,33 @@ app.post("/api/products", (req, res) => {
   });
 });
 
+// update an existing product
+app.patch("/api/products/:stock_number", (req, res) => {
+  const data = {
+    name: req.body.name,
+    description: req.body.description,
+    price: req.body.price,
+  };
+  db.run(
+    `UPDATE products set 
+           name = COALESCE(?,name), 
+           description = COALESCE(?,description), 
+           price = COALESCE(?,price) 
+           WHERE stock_number = ?`,
+    [data.name, data.description, data.price, req.params.stock_number],
+    function (err, result) {
+      if (err) {
+        res.status(400).json({ error: res.message });
+        return;
+      }
+      res.status(200).json({
+        message: "success",
+        payload: data,
+      });
+    }
+  );
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
