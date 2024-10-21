@@ -1,0 +1,29 @@
+# Plan
+
+- [ ] Investigate in memory starage options (SQLite, LowDB, NeDB, LokiJS)
+  - [ ] How to install
+  - [ ] How to use with a RESTful API
+- [ ] Set up environment
+  - [ ] init npm
+  - [ ] install express
+  - [ ] install in memory package
+    - [ ] Test
+- [ ] Define folder heirarchy
+  - [ ] Database?
+  - [ ] API server
+  - [ ] Helper functions
+- [ ] Define routes
+  - [ ] POST
+    - [ ] Test
+  - [ ] GET
+    - [ ] Test
+  - [ ] PUT
+    - [ ] Test
+- [ ] Define helper functions
+  - [ ] POST
+    - [ ] Test
+  - [ ] GET
+    - [ ] Test
+  - [ ] PUT
+    - [ ] Test
+- [ ] Test all
