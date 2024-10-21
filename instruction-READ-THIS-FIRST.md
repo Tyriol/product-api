@@ -10,15 +10,15 @@ These are the queries that we should be able to send to the endpoint
 Add a new product
 
 `curl -X POST -H "Content-Type: application/json" \
--d &#39;{"stock_number":"12345","name":"Pro
-Batteries","Description":"Batteries","Price":"£1.99"}&#39; \
+-d '{"stock_number":"12345","name":"Pro
+Batteries","Description":"Batteries","Price":"£1.99"}' \
 http://localhost:8080/products`
 
 Update an existing product
 
 `curl -X PUT -H "Content-Type: application/json" \
--d &#39;{"stock_number":"12345","name":"Pro
-Batteries","Description":"Batteries","Price":"£2.99"}&#39; \
+-d '{"stock_number":"12345","name":"Pro
+Batteries","Description":"Batteries","Price":"£2.99"}' \
 http://localhost:8080/products/{stock_number}`
 
 Get an existing product
