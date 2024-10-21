@@ -3,6 +3,7 @@ import db from "./database/database.js"; // Import the database connection
 const app = express();
 const PORT = 3000;
 
+// fetch all products from the database
 app.get("/api/products", (req, res) => {
   const sql = "SELECT * FROM products";
   const params = [];
@@ -14,6 +15,22 @@ app.get("/api/products", (req, res) => {
     res.status(200).json({
       message: "success",
       payload: rows,
+    });
+  });
+});
+
+// fetch a single product by stock number
+app.get("/api/products/:stock_number", (req, res) => {
+  const sql = "SELECT * FROM products WHERE stock_number = ?";
+  const params = [req.params.stock_number];
+  db.get(sql, params, (err, row) => {
+    if (err) {
+      res.status(400).json({ error: err.message });
+      return;
+    }
+    res.status(200).json({
+      message: "success",
+      payload: row,
     });
   });
 });
