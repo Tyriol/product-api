@@ -23,8 +23,8 @@ const db = new sqlite3.Database(DBSOURCE, (err) => {
           // Table just created, creating some rows
           const insert =
             "INSERT INTO products (name, description, price) VALUES (?,?,?)";
-          db.run(insert, ["product1", "description1", 100]);
-          db.run(insert, ["product2", "description2", 200]);
+          db.run(insert, ["product1", "description1", 1.00]);
+          db.run(insert, ["product2", "description2", 2.00]);
         }
       }
     );

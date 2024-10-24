@@ -10,22 +10,27 @@
 - [x] Set up database
   - [x] Create Schema (stock number (UUID maybe?), name, description, price)
   - [x] initialise db file
-- [ ] Define folder heirarchy
+- [x] Define folder heirarchy
   - [x] Database?
   - [x] API server
-  - [ ] Helper functions
-- [ ] Define routes
-  - [ ] POST
-    - [ ] Test
+  - [x] Helper functions
+- [x] Define routes
+  - [x] POST
+    - [x] Test
   - [x] GET
     - [x] Test
-  - [ ] PUT
-    - [ ] Test
-- [ ] Define helper functions
-  - [ ] POST
-    - [ ] Test
-  - [ ] GET
-    - [ ] Test
-  - [ ] PUT
-    - [ ] Test
-- [ ] Test all
+  - [x] PATCH
+    - [x] Test
+- [x] Define helper functions
+  - [x] POST
+    - [x] Test
+  - [x] GET
+    - [x] Test
+  - [x] PUT
+    - [x] Test
+- [x] Test all
+
+- [ ] Some sort of front end?
+  - [ ] Add new product form
+  - [ ] View product
+  - [ ] Update product form
