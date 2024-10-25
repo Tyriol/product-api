@@ -11,9 +11,9 @@ const db = new sqlite3.Database(DBSOURCE, (err) => {
     console.log("Connected to the SQLite database.");
     db.run(
       `CREATE TABLE products (
-    stock_number INTEGER PRIMARY KEY AUTOINCREMENT,
+    stock_number TEXT NOT NULL PRIMARY KEY,
     name TEXT NOT NULL,
-    description TEXT,
+    description TEXT NOT NULL,
     price REAL NOT NULL
     )`,
       (err) => {
@@ -22,9 +22,9 @@ const db = new sqlite3.Database(DBSOURCE, (err) => {
         } else {
           // Table just created, creating some rows
           const insert =
-            "INSERT INTO products (name, description, price) VALUES (?,?,?)";
-          db.run(insert, ["product1", "description1", 1.00]);
-          db.run(insert, ["product2", "description2", 2.00]);
+            "INSERT INTO products (stock_number, name, description, price) VALUES (?,?,?,?)";
+          db.run(insert, ["ABCDE12345", "product1", "description1", 1.0]);
+          db.run(insert, ["FEGHI67890", "product2", "description2", 2.0]);
         }
       }
     );

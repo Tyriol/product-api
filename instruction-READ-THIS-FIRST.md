@@ -42,3 +42,7 @@ feel see to add pseudo code.
 
 Please add your code to a repository in GitHub that is public and send us a link once you have
 completed the task.
+
+- Extension:
+  - Change Stock Number to not be auto generated ✅
+  - Add validation to check stock number is exactly 10 characters and contains only alphanumeric characters
