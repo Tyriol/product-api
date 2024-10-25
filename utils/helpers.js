@@ -35,6 +35,17 @@ export const getOneProduct = async (req, res) => {
 // POST new product
 export const addProduct = async (req, res) => {
   const errors = [];
+  // Check that that stock numnber is alphanumeric and always 10 characters long
+  const alphanumericRegex = new RegExp(/^[a-z0-9]{10}$/i);
+  let testStockNumber = alphanumericRegex.test(req.body.stock_number);
+  if (!testStockNumber) {
+    errors.push(
+      "Stock number is not AlphaNumeric or it's not 10 characters exactly"
+    );
+  }
+  if (!req.body.stock_number) {
+    errors.push("No stock number specified");
+  }
   if (!req.body.name) {
     errors.push("No name specified");
   }
@@ -48,13 +59,17 @@ export const addProduct = async (req, res) => {
     res.status(400).json({ error: errors.join(", ") });
     return;
   }
+
   const data = {
+    stock_number: req.body.stock_number,
     name: req.body.name,
     description: req.body.description,
     price: req.body.price,
   };
-  const sql = "INSERT INTO products (name, description, price) VALUES (?,?,?)";
-  const params = [data.name, data.description, data.price];
+
+  const sql =
+    "INSERT INTO products (stock_number, name, description, price) VALUES (?,?,?,?)";
+  const params = [data.stock_number, data.name, data.description, data.price];
   db.run(sql, params, function (err, result) {
     if (err) {
       res.status(400).json({ error: err.message });
