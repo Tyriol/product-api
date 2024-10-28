@@ -10,8 +10,7 @@ export const getAllProducts = async (req, res) => {
       return;
     }
     res.status(200).json({
-      message: "success",
-      payload: rows,
+      rows,
     });
   });
 };
@@ -26,7 +25,6 @@ export const getOneProduct = async (req, res) => {
       return;
     }
     res.status(200).json({
-      message: "success",
       payload: row,
     });
   });
@@ -76,7 +74,6 @@ export const addProduct = async (req, res) => {
       return;
     }
     res.status(201).json({
-      message: "success",
       payload: data,
     });
   });
@@ -102,7 +99,6 @@ export const updateProduct = async (req, res) => {
         return;
       }
       res.status(200).json({
-        message: "success",
         payload: data,
       });
     }
