@@ -1,4 +1,6 @@
 import express from "express";
+import cors from "cors";
+
 import {
   getAllProducts,
   getOneProduct,
@@ -7,7 +9,9 @@ import {
 } from "./utils/helpers.js";
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
+
+app.use(cors());
 
 // middleware to parse incoming data
 import bodyParser from "body-parser";
