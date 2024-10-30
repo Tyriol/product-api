@@ -25,21 +25,25 @@
             <div class="add-product">
                 <div class="add-product-form">
                     <h2>Add a Product</h2>
-                    <form action="/submit-product" method="post">
+                    <form>
+                        <div>
+                            <label for="stock-number">Stock Number:</label>
+                            <input type="text" id="stock-number" name="stock-number">
+                        </div>
                         <div>
                             <label for="product-name">Name:</label>
-                            <input type="text" id="product-name" name="name" required>
+                            <input type="text" id="product-name" name="product-name">
                         </div>
                         <div>
                             <label for="product-description">Description:</label>
-                            <textarea id="product-description" name="description" required></textarea>
+                            <textarea id="product-description" name="description"></textarea>
                         </div>
                         <div>
                             <label for="product-price">Price:</label>
-                            <input type="number" id="product-price" name="price" step="0.01" required>
+                            <input type="number" id="product-price" name="price" step="0.01">
                         </div>
                         <div>
-                            <button type="submit">Submit</button>
+                            <button type="submit" class="add-product-submit">Submit</button>
                         </div>
                     </form>
                 </div>
