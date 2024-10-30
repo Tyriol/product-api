@@ -35,13 +35,13 @@ export const addProduct = async (req, res) => {
   const errors = [];
   // Check that that stock numnber is alphanumeric and always 10 characters long
   const alphanumericRegex = new RegExp(/^[a-z0-9]{10}$/i);
-  let testStockNumber = alphanumericRegex.test(req.body.stock_number);
-  if (!testStockNumber) {
+  let isValidStockNumber = alphanumericRegex.test(req.body.stockNumber);
+  if (!isValidStockNumber) {
     errors.push(
       "Stock number is not AlphaNumeric or it's not 10 characters exactly"
     );
   }
-  if (!req.body.stock_number) {
+  if (!req.body.stockNumber) {
     errors.push("No stock number specified");
   }
   if (!req.body.name) {
@@ -59,7 +59,7 @@ export const addProduct = async (req, res) => {
   }
 
   const data = {
-    stock_number: req.body.stock_number,
+    stock_number: req.body.stockNumber,
     name: req.body.name,
     description: req.body.description,
     price: req.body.price,
