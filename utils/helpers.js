@@ -1,4 +1,5 @@
 import db from "../database/database.js"; // Import the database connection
+import { validateFormInputs } from "./validate-form-inputs.js";
 
 // GET all
 export const getAllProducts = async (req, res) => {
@@ -32,32 +33,13 @@ export const getOneProduct = async (req, res) => {
 
 // POST new product
 export const addProduct = async (req, res) => {
-  const errors = [];
-  // Check that that stock numnber is alphanumeric and always 10 characters long
-  const alphanumericRegex = new RegExp(/^[a-z0-9]{10}$/i);
-  let isValidStockNumber = alphanumericRegex.test(req.body.stockNumber);
-  if (!isValidStockNumber) {
-    errors.push(
-      "Stock number is not AlphaNumeric or it's not 10 characters exactly"
-    );
-  }
-  if (!req.body.stockNumber) {
-    errors.push("No stock number specified");
-  }
-  if (!req.body.name) {
-    errors.push("No name specified");
-  }
-  if (!req.body.description) {
-    errors.push("No description specified");
-  }
-  if (!req.body.price) {
-    errors.push("No price specified");
-  }
-  if (errors.length) {
+  // validate request info fulfills the requirements
+  const errors = validateFormInputs(req);
+  if (errors) {
     res.status(400).json({ error: errors.join(", ") });
     return;
   }
-
+  // gather data to add to db
   const data = {
     stock_number: req.body.stockNumber,
     name: req.body.name,
