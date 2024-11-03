@@ -49,7 +49,8 @@ const clearList = () => {
 const renderListItem = (product) => {
   const productName = product.name;
   const listItem = document.createElement("li");
-  listItem.innerText = productName;
+  const editButton = document.createElement("button");
+  listItem.innerHTML = productName;
   return listItem;
 };
 
