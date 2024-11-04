@@ -45,24 +45,18 @@ const clearList = () => {
   }
 };
 
-const renderEditButton = () => {
-  const editButton = document.createElement("button");
-  editButton.innerText = "EDIT";
-  return editButton;
-};
-
-const renderDeleteButton = () => {
-  const deleteButton = document.createElement("button");
-  deleteButton.innerText = "DELETE";
-  return deleteButton;
+const renderButton = (text) => {
+  const button = document.createElement("button");
+  button.innerText = text;
+  return button;
 };
 
 // !! Render List Item
 const renderListItem = (product) => {
   const productName = product.name;
   const listItem = document.createElement("li");
-  const editButton = renderEditButton();
-  const deleteButton = renderDeleteButton();
+  const editButton = renderButton("EDIT");
+  const deleteButton = renderButton("DELETE");
   listItem.innerHTML = productName;
   listItem.appendChild(editButton);
   listItem.appendChild(deleteButton);
