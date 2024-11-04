@@ -45,12 +45,19 @@ const clearList = () => {
   }
 };
 
+const renderEditButton = () => {
+  const editButton = document.createElement("button");
+  editButton.innerText = "EDIT";
+  return editButton;
+};
+
 // !! Render List Item
 const renderListItem = (product) => {
   const productName = product.name;
   const listItem = document.createElement("li");
-  const editButton = document.createElement("button");
+  const editButton = renderEditButton();
   listItem.innerHTML = productName;
+  listItem.appendChild(editButton);
   return listItem;
 };
 
