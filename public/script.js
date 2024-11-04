@@ -45,9 +45,10 @@ const clearList = () => {
   }
 };
 
-const renderButton = (text) => {
+const renderButton = (buttonText, buttonClass) => {
   const button = document.createElement("button");
-  button.innerText = text;
+  button.setAttribute("class", buttonClass);
+  button.innerText = buttonText;
   return button;
 };
 
@@ -55,8 +56,8 @@ const renderButton = (text) => {
 const renderListItem = (product) => {
   const productName = product.name;
   const listItem = document.createElement("li");
-  const editButton = renderButton("EDIT");
-  const deleteButton = renderButton("DELETE");
+  const editButton = renderButton("EDIT", "edit-button");
+  const deleteButton = renderButton("DELETE", "delete-button");
   listItem.innerHTML = productName;
   listItem.appendChild(editButton);
   listItem.appendChild(deleteButton);
