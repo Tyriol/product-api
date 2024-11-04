@@ -51,13 +51,21 @@ const renderEditButton = () => {
   return editButton;
 };
 
+const renderDeleteButton = () => {
+  const deleteButton = document.createElement("button");
+  deleteButton.innerText = "DELETE";
+  return deleteButton;
+};
+
 // !! Render List Item
 const renderListItem = (product) => {
   const productName = product.name;
   const listItem = document.createElement("li");
   const editButton = renderEditButton();
+  const deleteButton = renderDeleteButton();
   listItem.innerHTML = productName;
   listItem.appendChild(editButton);
+  listItem.appendChild(deleteButton);
   return listItem;
 };
 
