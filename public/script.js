@@ -46,6 +46,17 @@ const clearList = () => {
   }
 };
 
+const renderProductInfo = (product) => {
+  const productInfo = document.createElement("div");
+  productInfo.setAttribute("class", "product-info");
+  productInfo.innerHTML = `<div>Name: ${product.name}</div>
+  <div>Stock Number: ${product.stock_number}</div>
+  <div>Description: ${product.description}</div>
+  <div>Price: £${product.price}</div>
+  `;
+  return productInfo;
+};
+
 const renderButton = (buttonText, buttonClass) => {
   const button = document.createElement("button");
   button.setAttribute("class", buttonClass);
@@ -55,11 +66,12 @@ const renderButton = (buttonText, buttonClass) => {
 
 // !! Render List Item
 const renderListItem = (product) => {
-  const productName = product.name;
+  // const productName = product.name;
   const listItem = document.createElement("li");
+  const productInfo = renderProductInfo(product);
   const editButton = renderButton("EDIT", "edit-button");
   const deleteButton = renderButton("DELETE", "delete-button");
-  listItem.innerHTML = productName;
+  listItem.appendChild(productInfo);
   listItem.appendChild(editButton);
   listItem.appendChild(deleteButton);
   return listItem;
