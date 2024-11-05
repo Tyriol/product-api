@@ -56,7 +56,7 @@ export const addProduct = async (req, res) => {
       return;
     }
     res.status(201).json({
-      payload: data,
+      data,
     });
   });
 };
