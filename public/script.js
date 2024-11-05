@@ -1,10 +1,11 @@
 const productList = document.querySelector(".product-list");
 const newProductSubmitButton = document.querySelector(".add-product-submit");
 
-const handleSubmit = (e) => {
+const handleSubmit = async (e) => {
   e.preventDefault();
   // post new product
-  addProduct();
+  const newProductAdded = await addProduct();
+  alert(newProductAdded.data.name + " added");
 };
 
 const addProduct = async () => {
@@ -14,7 +15,7 @@ const addProduct = async () => {
     body: JSON.stringify(gatherFormData()),
   });
   const data = await response.json();
-  console.log(data);
+  return data;
 };
 
 const gatherFormData = () => {
