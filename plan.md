@@ -30,7 +30,7 @@
     - [x] Test
 - [x] Test all
 
-- [ ] Some sort of front end?
-  - [ ] Add new product form
+- [x] Some sort of front end?
+  - [x] Add new product form
   - [ ] View product
   - [ ] Update product form
